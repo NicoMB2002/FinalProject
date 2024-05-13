@@ -15,8 +15,8 @@ public class Student {
     private Gender gender;
     private String address;
     private String department;
-    private ArrayList course;
-    private ArrayList finalScores;
+    private String course;
+    private String finalScores;
     private int nextId;
 
 }
