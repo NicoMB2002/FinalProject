@@ -2,6 +2,8 @@ package org.example;
 
 import lombok.*;
 
+import java.util.ArrayList;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -12,8 +14,9 @@ public class Course {
     private String courseId;
     private String courseName;
     private double credits;
-    private String department;
-    private String[] assignments;
-    private Student student;
+    private Department department;
+    private ArrayList<Assignment> assignments;
+    private ArrayList<Student> student;
+    private ArrayList<Double> finalScores;
     private int nextId;
 }
