@@ -15,7 +15,7 @@ public class Student {
     private Gender gender;
     private Address address;
     private Department department;
-    private ArrayList<Course> course;
+    private ArrayList<Course> registeredCourses;
     private int nextId;
 
 }
