@@ -3,7 +3,6 @@ package org.example;
 import lombok.*;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode
 @ToString
 @Getter
@@ -15,6 +14,17 @@ public class Address {
     private String province;
     private String postalCode;
     private String country;
+
+    public Address(int streetNo, String street, String city, String province, String postalCode, String country) {
+        this.streetNo = streetNo;
+        this.street = street;
+        this.city = city;
+        this.province = province;
+        if (isPostalCodeValid(postalCode)) {
+            this.postalCode = postalCode.toUpperCase();
+        }
+        this.country = country;
+    }
 
     public static boolean isPostalCodeValid(String postalCode) {
         if (postalCode == null) {
