@@ -3,7 +3,6 @@ package org.example;
 import lombok.*;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode
 @ToString
 @Getter
@@ -23,6 +22,9 @@ public class Address {
         this.province = province;
         if (isPostalCodeValid(postalCode)) {
             this.postalCode = postalCode.toUpperCase();
+        }
+        else {
+            this.postalCode = null;
         }
         this.country = country;
     }
