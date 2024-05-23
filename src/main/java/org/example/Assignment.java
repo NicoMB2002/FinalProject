@@ -39,4 +39,33 @@ public class Assignment {
             assignmentAverage = total / scores.size();
         }
     }
+
+    public void setAssignmentId(String assignmentId) {
+        this.assignmentId = assignmentId;
+    }
+
+    public void setAssignmentName(String assignmentName) {
+        this.assignmentName = assignmentName;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public void setMaxScore(int maxScore) {
+        this.maxScore = maxScore;
+    }
+
+    public void setAssignmentAverage(double assignmentAverage) {
+        this.assignmentAverage = assignmentAverage;
+    }
+
+    public void setScores(ArrayList<Integer> scores) {
+        this.scores = scores;
+        calcAssignmentAvg();
+    }
+
+    public void setNextId(int nextId) {
+        this.nextId = nextId;
+    }
 }
