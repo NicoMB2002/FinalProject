@@ -5,7 +5,6 @@ import lombok.*;
 import java.util.ArrayList;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
 @EqualsAndHashCode
 @Getter
@@ -18,5 +17,16 @@ public class Course {
     private ArrayList<Assignment> assignments;
     private ArrayList<Student> registeredStudents;
     private ArrayList<Double> finalScores;
-    private int nextId;
+    private static int nextId = 2;
+
+    public Course(String courseId, String courseName, double credits, Department department, ArrayList<Assignment> assignments,
+                  ArrayList<Student> registeredStudents, ArrayList<Double> finalScores) {
+        this.courseId = String.format("C%02d", nextId++);
+        this.courseName = courseName;
+        this.credits = credits;
+        this.department = department;
+        this.assignments = assignments;
+        this.registeredStudents = registeredStudents;
+        this.finalScores = finalScores;
+    }
 }

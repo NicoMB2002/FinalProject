@@ -10,17 +10,18 @@ import lombok.*;
 public class Department {
     private String departmentId;
     private String departmentName;
-    private int nextId;
+    private static int nextId = 4;
 
-    public Department(String departmentId, String departmentName, int nextId) {
-        this.departmentId = departmentId;
+    public Department(String departmentId, String departmentName) {
+        this.departmentId = String.format("D%02d", nextId++);
         if (validateDepartmentName(departmentName)) {
             this.departmentName = departmentName;
         } else {
             this.departmentName = null;
         }
-        this.nextId = nextId;
     }
+
+
 
     public static boolean validateDepartmentName(String departmentName) {
         if (departmentName == null || departmentName.isEmpty()) {
