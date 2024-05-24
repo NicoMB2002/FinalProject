@@ -5,7 +5,6 @@ import lombok.*;
 import java.util.ArrayList;
 
 @NoArgsConstructor
-@ToString
 @EqualsAndHashCode
 @Getter
 @Setter
@@ -28,6 +27,19 @@ public class Course {
         this.assignments = assignments;
         this.registeredStudents = registeredStudents;
         this.finalScores = finalScores;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseId='" + courseId + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", credits=" + credits +
+                ", department=" + department +
+                ", assignments=" + assignments +
+                ", registeredStudents=" + registeredStudents +
+                ", finalScores=" + finalScores +
+                '}';
     }
 
     public boolean isAssignmentWeightValid() {
@@ -59,5 +71,17 @@ public class Course {
             }
             finalScores.remove(index);
         }
+    }
+
+    public int[] calcStudentsAverage() {
+        int[] averages = new int[registeredStudents.size()];
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            double total = 0;
+            for (Assignment assignment : assignments) {
+                total += assignment.getScores().get(i) * assignment.getWeight();
+            }
+            averages[i] = (int) total;
+        }
+        return averages;
     }
 }

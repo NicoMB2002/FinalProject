@@ -48,4 +48,8 @@ public class Student {
         System.out.printf("%s is successfully removed.\n", course.getCourseName());
         return true;
     }
+    public String toSimplifiedString() {
+        return studentId + ": " + studentName + ", " + department.getDepartmentName();
+    }
+
 }
