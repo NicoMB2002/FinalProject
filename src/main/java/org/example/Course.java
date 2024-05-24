@@ -37,4 +37,16 @@ public class Course {
         }
         return totalWeight == 1.0;
     }
+
+    public boolean registerStudent(Student student) {
+        if (!registeredStudents.contains(student)) {
+            registeredStudents.add(student);
+            for (Assignment assignment : assignments) {
+                assignment.getScores().add(null);
+            }
+            finalScores.add(null);
+            return true;
+        }
+        return false;
+    }
 }
