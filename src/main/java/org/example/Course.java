@@ -84,4 +84,14 @@ public class Course {
         }
         return averages;
     }
+    public boolean addAssignment(String assignmentName, double weight, int maxScore) {
+        if (isAssignmentWeightValid()){
+            assignments.add(new Assignment(assignmentName, weight, maxScore));
+            for (Student student : registeredStudents) {
+                assignments.get(assignments.size() - 1).getScores().add(null);
+            }
+            return true;
+        }
+        return false;
+    }
 }
