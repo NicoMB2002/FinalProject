@@ -10,7 +10,7 @@ import lombok.*;
 public class Department {
     private String departmentId;
     private String departmentName;
-    private static int nextId = 4;
+    private static int nextId = 1;
 
     public Department(String departmentId, String departmentName) {
         this.departmentId = String.format("D%02d", nextId++);

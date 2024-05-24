@@ -17,10 +17,10 @@ public class Assignment {
     private int maxScore;
     private double assignmentAverage;
     private ArrayList<Integer> scores;
-    private int nextId = 3;
+    private int nextId = 1;
 
     public Assignment(String assignmentName, double weight, int maxScore) {
-        this.assignmentId = String.format("A%d", nextId++);
+        this.assignmentId = String.format("A%03d", nextId++);
         this.assignmentName = assignmentName;
         this.weight = weight;
         this.maxScore = maxScore;
