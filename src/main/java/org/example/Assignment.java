@@ -7,7 +7,6 @@ import java.util.Random;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @EqualsAndHashCode
 @Getter
 @Setter
@@ -58,6 +57,15 @@ public class Assignment {
             score = random.nextInt(90, 100);
         }
         scores.add(score);
+    }
+
+    @Override
+    public String toString() {
+        return "Assignment{" +
+                "assignmentId='" + assignmentId + '\'' +
+                ", assignmentName='" + assignmentName + '\'' +
+                ", weight=" + weight +
+                ", maxScore=" + maxScore + '}';
     }
 
     public void setAssignmentId(String assignmentId) {
