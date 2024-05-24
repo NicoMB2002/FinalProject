@@ -94,4 +94,13 @@ public class Course {
         }
         return false;
     }
+
+    public void generateScores() {
+        for (Assignment assignment : assignments) {
+            assignment.generateRandomScore();
+        }
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            finalScores.set(i, (double) calcStudentsAverage()[i]);
+        }
+    }
 }
