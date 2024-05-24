@@ -124,4 +124,8 @@ public class Course {
         }
         System.out.println();
     }
+
+    public String toSimplifiedString() {
+        return courseId + ": " + courseName + ", Credits: " + credits + ", Department: " + department.getDepartmentName();
+    }
 }
