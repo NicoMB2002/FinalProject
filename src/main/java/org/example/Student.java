@@ -33,7 +33,7 @@ public class Student {
         }
 
         registeredCourses.add(course);
-        course.getRegisteredStudents().add(this);
+        course.registerStudent(this);
         System.out.printf("%s is successfully registered.\n", course.getCourseName());
         return true;
     }
@@ -44,7 +44,7 @@ public class Student {
             return false;
         }
         registeredCourses.remove(course);
-        course.getRegisteredStudents().remove(this);
+        course.dropStudent(this);
         System.out.printf("%s is successfully removed.\n", course.getCourseName());
         return true;
     }
