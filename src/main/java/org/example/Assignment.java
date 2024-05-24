@@ -3,6 +3,7 @@ package org.example;
 import lombok.*;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,7 +21,7 @@ public class Assignment {
     private int nextId = 3;
 
     public Assignment(String assignmentName, double weight, int maxScore) {
-        this.assignmentId = assignmentId;
+        this.assignmentId = String.format("A%d", nextId++);
         this.assignmentName = assignmentName;
         this.weight = weight;
         this.maxScore = maxScore;
@@ -38,6 +39,25 @@ public class Assignment {
             }
             assignmentAverage = total / scores.size();
         }
+    }
+
+    public void generateRandomScore() {
+        Random random = new Random();
+
+        int randomRange = random.nextInt(11);
+        int score;
+        if (randomRange == 0) {
+            score = random.nextInt(60);
+        } else if (randomRange == 1 || randomRange == 2) {
+            score = random.nextInt(60, 70);
+        } else if (randomRange == 3 || randomRange == 4) {
+            score = random.nextInt(70, 80);
+        } else if (randomRange >= 5 && randomRange <= 8) {
+            score = random.nextInt(80, 90);
+        } else {
+            score = random.nextInt(90, 100);
+        }
+        scores.add(score);
     }
 
     public void setAssignmentId(String assignmentId) {
