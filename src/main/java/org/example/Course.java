@@ -103,4 +103,25 @@ public class Course {
             finalScores.set(i, (double) calcStudentsAverage()[i]);
         }
     }
+
+    public void displayScores() {
+        System.out.println("Course: " + courseName + "(" + courseId + ")");
+        System.out.print("Student");
+        for (Assignment assignment : assignments) {
+            System.out.print("\t" + assignment.getAssignmentName());
+        }
+        System.out.println("\tFinal Score");
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            System.out.print(registeredStudents.get(i).toSimplifiedString());
+            for (Assignment assignment : assignments) {
+                System.out.print("\t" + assignment.getScores().get(i));
+            }
+            System.out.println("\t" + finalScores.get(i));
+        }
+        System.out.print("Average");
+        for (Assignment assignment : assignments) {
+            System.out.print("\t" + assignment.getAssignmentAverage());
+        }
+        System.out.println();
+    }
 }
