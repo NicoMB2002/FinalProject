@@ -11,7 +11,7 @@ public class Main {
         Department department = new Department("Biology");
         System.out.println(department);
 
-        Student student = new Student("nicolas", Gender.MALE, address, department);
+        Student student = new Student("nicolas moncayo", Gender.MALE, address, department);
         System.out.println(student);
 
         Student student2 = new Student("Michael", Gender.MALE, address, department);

@@ -1,6 +1,7 @@
 package org.example;
 
 import lombok.*;
+import org.example.util.Util;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,7 @@ public class Course {
     public Course(String courseName, double credits, Department department, ArrayList<Assignment> assignments,
                   ArrayList<Student> registeredStudents, ArrayList<Double> finalScores) {
         this.courseId = "C-" + department.getDepartmentId() + "-" + String.format("%02d", nextId++);
-        this.courseName = courseName;
+        this.courseName = Util.toTitleCase(courseName);
         this.credits = credits;
         this.department = department;
         this.assignments = assignments;

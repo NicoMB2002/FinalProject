@@ -1,6 +1,7 @@
 package org.example;
 
 import lombok.*;
+import org.example.util.Util;
 
 @NoArgsConstructor
 @ToString
@@ -15,7 +16,7 @@ public class Department {
     public Department(String departmentName) {
         this.departmentId = String.format("D%02d", nextId++);
         if (validateDepartmentName(departmentName)) {
-            this.departmentName = departmentName;
+            this.departmentName = Util.toTitleCase(departmentName);
         } else {
             this.departmentName = null;
         }
