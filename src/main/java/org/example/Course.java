@@ -5,6 +5,7 @@ import org.example.util.Util;
 
 import java.util.ArrayList;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
 @Getter
@@ -19,15 +20,14 @@ public class Course {
     private ArrayList<Double> finalScores;
     private static int nextId = 1;
 
-    public Course(String courseName, double credits, Department department, ArrayList<Assignment> assignments,
-                  ArrayList<Student> registeredStudents, ArrayList<Double> finalScores) {
+    public Course(String courseName, double credits, Department department) {
         this.courseId = "C-" + department.getDepartmentId() + "-" + String.format("%02d", nextId++);
         this.courseName = Util.toTitleCase(courseName);
         this.credits = credits;
         this.department = department;
-        this.assignments = assignments;
-        this.registeredStudents = registeredStudents;
-        this.finalScores = finalScores;
+        this.assignments = new ArrayList<>();
+        this.registeredStudents = new ArrayList<>();
+        this.finalScores = new ArrayList<>();
     }
 
     @Override
