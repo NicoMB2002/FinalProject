@@ -74,6 +74,21 @@ public class Course {
     }
 
     /**
+     * drops student from course
+     * @param student input object from Student class
+     */
+    public void dropStudent(Student student) {
+        if (registeredStudents.contains(student)) {
+            int index = registeredStudents.indexOf(student);
+            registeredStudents.remove(index);
+            for (Assignment assignment : assignments) {
+                assignment.getScores().remove(index);
+            }
+            finalScores.remove(index);
+        }
+    }
+
+    /**
      * calculates the weighted average score of a student.
      * @return average
      */
