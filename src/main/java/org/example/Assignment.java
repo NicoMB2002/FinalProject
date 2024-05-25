@@ -28,6 +28,9 @@ public class Assignment {
         this.scores = new ArrayList<>();
     }
 
+    /**
+     * calculates the average score for one assignment
+     */
     public void calcAssignmentAvg() {
         if (scores.isEmpty()) {
             assignmentAverage = 0.0;
@@ -40,6 +43,9 @@ public class Assignment {
         }
     }
 
+    /**
+     * generates random scores for all students in an assignment
+     */
     public void generateRandomScore() {
         Random random = new Random();
 

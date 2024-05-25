@@ -147,7 +147,7 @@ public class Course {
         }
         System.out.println("\tFinal Score");
         for (int i = 0; i < registeredStudents.size(); i++) {
-            System.out.print(registeredStudents.get(i).toSimplifiedString());
+            System.out.print(registeredStudents.get(i));
             for (Assignment assignment : assignments) {
                 System.out.print("\t" + assignment.getScores().get(i));
             }
@@ -165,10 +165,6 @@ public class Course {
      * @return simplified string
      */
     public String toSimplifiedString() {
-        return "Course{" +
-                "courseId='" + courseId + '\'' +
-                ", courseName='" + courseName + '\'' +
-                ", credits=" + credits +
-                ", department=" + department + '}';
+        return courseId + ": " + courseName + ", Credits: " + credits + ", Department: " + department.getDepartmentName();
     }
 }
