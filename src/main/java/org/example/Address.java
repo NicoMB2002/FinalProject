@@ -29,6 +29,11 @@ public class Address {
         this.country = country;
     }
 
+    /**
+     * checks if a postcode is valid or not. The length of a postal code can either be `6` or `7`
+     * @param postalCode input String
+     * @return true when valid
+     */
     public static boolean isPostalCodeValid(String postalCode) {
         if (postalCode == null) {
             return false;
