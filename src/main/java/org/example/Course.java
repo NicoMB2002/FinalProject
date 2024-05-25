@@ -18,7 +18,7 @@ public class Course {
     private ArrayList<Double> finalScores;
     private static int nextId = 1;
 
-    public Course(String courseId, String courseName, double credits, Department department, ArrayList<Assignment> assignments,
+    public Course(String courseName, double credits, Department department, ArrayList<Assignment> assignments,
                   ArrayList<Student> registeredStudents, ArrayList<Double> finalScores) {
         this.courseId = "C-" + department.getDepartmentId() + "-" + String.format("%02d", nextId++);
         this.courseName = courseName;

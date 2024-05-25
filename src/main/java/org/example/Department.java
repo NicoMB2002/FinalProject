@@ -12,7 +12,7 @@ public class Department {
     private String departmentName;
     private static int nextId = 1;
 
-    public Department(String departmentId, String departmentName) {
+    public Department(String departmentName) {
         this.departmentId = String.format("D%02d", nextId++);
         if (validateDepartmentName(departmentName)) {
             this.departmentName = departmentName;
