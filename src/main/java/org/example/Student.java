@@ -68,4 +68,11 @@ public class Student {
         return false;
     }
 
+    /**
+     * converts a student to a simple string `studentId`, the `studentName`, and `departmentName`
+     * @return simplified string
+     */
+    public String toSimplifiedString() {
+        return studentId + ": " + studentName + ", " + department.getDepartmentName();
+    }
 }
